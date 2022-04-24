@@ -1,0 +1,228 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.4
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: May 04, 2019 at 07:29 AM
+-- Server version: 5.6.12-log
+-- PHP Version: 5.4.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `doctorappointment`
+--
+CREATE DATABASE IF NOT EXISTS `doctorappointment` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `doctorappointment`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `adddoctor`
+--
+
+CREATE TABLE IF NOT EXISTS `adddoctor` (
+  `Doctor_Id` int(5) NOT NULL AUTO_INCREMENT,
+  `Doctor_Name` varchar(50) NOT NULL,
+  `Doctor_Spec` varchar(50) NOT NULL,
+  `Doctor_Area` varchar(50) NOT NULL,
+  `Doctor_Mob` varchar(30) NOT NULL,
+  `Doctor_Cname` varchar(40) NOT NULL,
+  `Doctor_Wexp` varchar(100) NOT NULL,
+  `Doctor_Address` varchar(500) NOT NULL,
+  `Doctor_Date_Time` varchar(30) NOT NULL,
+  PRIMARY KEY (`Doctor_Id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `adddoctor`
+--
+
+INSERT INTO `adddoctor` (`Doctor_Id`, `Doctor_Name`, `Doctor_Spec`, `Doctor_Area`, `Doctor_Mob`, `Doctor_Cname`, `Doctor_Wexp`, `Doctor_Address`, `Doctor_Date_Time`) VALUES
+(2, 'None', 'None', 'None', 'None', 'None', 'None', 'None', '2019-04-18 17:21:25.456000'),
+(3, 'None', 'None', 'None', 'None', 'None', 'None', 'None', '2019-04-18 17:22:09.919000'),
+(4, 'None', 'None', 'None', 'None', 'None', 'None', 'None', '2019-04-18 17:22:31.624000'),
+(5, 'vbn', 'cvb ', 'gnb', 'xfgbn', 'fgn', 'fgn', 'fgn', 'fg'),
+(6, 'vbn', 'cvb ', 'gnb', 'xfgbn', 'fgn', 'fgn', 'fgn', 'fg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE IF NOT EXISTS `admin` (
+  `Admin_Id` int(5) NOT NULL AUTO_INCREMENT,
+  `Admin_Email` varchar(50) NOT NULL,
+  `Admin_Password` varchar(50) NOT NULL,
+  `Admin_Date_Time` varchar(30) NOT NULL,
+  PRIMARY KEY (`Admin_Id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`Admin_Id`, `Admin_Email`, `Admin_Password`, `Admin_Date_Time`) VALUES
+(1, 'admin@gmail.com', 'admin', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `appointment`
+--
+
+CREATE TABLE IF NOT EXISTS `appointment` (
+  `Appoint_Id` int(5) NOT NULL AUTO_INCREMENT,
+  `Appoint_Fname` varchar(30) NOT NULL,
+  `Appoint_Lname` varchar(30) NOT NULL,
+  `Appoint_Services` varchar(50) NOT NULL,
+  `Appoint_Mobile` varchar(30) NOT NULL,
+  `Appoint_Message` varchar(500) NOT NULL,
+  `Appoint_Date_Time` varchar(30) NOT NULL,
+  PRIMARY KEY (`Appoint_Id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `appointment`
+--
+
+INSERT INTO `appointment` (`Appoint_Id`, `Appoint_Fname`, `Appoint_Lname`, `Appoint_Services`, `Appoint_Mobile`, `Appoint_Message`, `Appoint_Date_Time`) VALUES
+(1, 'e', 'hj', 'Neurology', '8009669023', 'None', '2019-04-13 18:14:50.957000'),
+(2, 'e', 'hj', 'Neurology', '8009669023', 'None', '2019-04-13 18:16:13.724000'),
+(3, 'None', 'None', 'Select Your Services', 'None', 'None', '2019-04-20 10:45:15.454000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE IF NOT EXISTS `contact` (
+  `Contact_Id` int(5) NOT NULL AUTO_INCREMENT,
+  `Contact_Name` varchar(50) NOT NULL,
+  `Contact_Email` varchar(50) NOT NULL,
+  `Contact_Subject` varchar(50) NOT NULL,
+  `Contact_Message` varchar(500) NOT NULL,
+  `Contact_Date_Time` varchar(30) NOT NULL,
+  PRIMARY KEY (`Contact_Id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`Contact_Id`, `Contact_Name`, `Contact_Email`, `Contact_Subject`, `Contact_Message`, `Contact_Date_Time`) VALUES
+(1, 'gopal singh', 'a@gmail.com', 'sdfgh', 'sdsdfvdfvdfv', '2019-04-13 12:15:57.065000'),
+(2, 'None', 'None', 'None', 'None', '2019-04-13 12:42:55.091000'),
+(3, 'None', 'None', 'None', 'None', '2019-04-13 12:42:55.110000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login`
+--
+
+CREATE TABLE IF NOT EXISTS `login` (
+  `Login_Id` int(5) NOT NULL AUTO_INCREMENT,
+  `Login_Email` varchar(50) NOT NULL,
+  `Login_Password` varchar(50) NOT NULL,
+  `Login_Status` varchar(20) NOT NULL,
+  `Login_Date_Time` varchar(30) NOT NULL,
+  PRIMARY KEY (`Login_Id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`Login_Id`, `Login_Email`, `Login_Password`, `Login_Status`, `Login_Date_Time`) VALUES
+(1, 'abhay@gmail.com', '12345', 'false', '2019-04-13 11:10:55.501000'),
+(2, 'ram@gmail.com', '12345', 'false', '2019-04-15 13:59:17.576000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `registration`
+--
+
+CREATE TABLE IF NOT EXISTS `registration` (
+  `Reg_Id` int(5) NOT NULL AUTO_INCREMENT,
+  `Reg_Name` varchar(50) NOT NULL,
+  `Reg_Mobile` varchar(30) NOT NULL,
+  `Reg_Email` varchar(50) NOT NULL,
+  `Reg_Password` varchar(50) NOT NULL,
+  `Reg_City` varchar(30) NOT NULL,
+  `Reg_Date_Time` varchar(30) NOT NULL,
+  PRIMARY KEY (`Reg_Id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `registration`
+--
+
+INSERT INTO `registration` (`Reg_Id`, `Reg_Name`, `Reg_Mobile`, `Reg_Email`, `Reg_Password`, `Reg_City`, `Reg_Date_Time`) VALUES
+(2, 'gopal', '8009669023', 'a@gmail.com', '1234', 'lucknow', '2019-04-11 18:27:48.393000'),
+(3, 'gopal singh', '8009669023', 'a@gmail.com', '1234', 'lucknow', '2019-04-11 18:30:23.005000'),
+(5, 'abhay', '7412589632', 'abhay@gmail.com', '12345', 'lko', '2019-04-13 10:58:48.704000'),
+(6, 'abhay', '7412589632', 'abhay@gmail.com', '12345', 'lko', '2019-04-13 11:02:10.414000'),
+(8, 'abhay', '7412589632', 'abhay@gmail.com', '12345', 'lko', '2019-04-13 11:10:55.501000'),
+(9, 'ram', '8009669023', 'ram@gmail.com', '12345', 'lucknow', '2019-04-15 13:59:17.576000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userappointment`
+--
+
+CREATE TABLE IF NOT EXISTS `userappointment` (
+  `User_Id` int(5) NOT NULL AUTO_INCREMENT,
+  `Doctor_Id` int(5) NOT NULL,
+  `User_Name` varchar(50) NOT NULL,
+  `User_Mobile` varchar(30) NOT NULL,
+  `User_Refer` varchar(30) NOT NULL,
+  `User_Area` varchar(30) NOT NULL,
+  `User_Book_Day` varchar(40) NOT NULL,
+  `User_Date_Time` varchar(40) NOT NULL,
+  PRIMARY KEY (`User_Id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `userappointment`
+--
+
+INSERT INTO `userappointment` (`User_Id`, `Doctor_Id`, `User_Name`, `User_Mobile`, `User_Refer`, `User_Area`, `User_Book_Day`, `User_Date_Time`) VALUES
+(1, 2, 'gopal singh', '6394296293', 'bhau', 'ererge', 'Today', '2019-04-20 13:36:05.036000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userfeedback`
+--
+
+CREATE TABLE IF NOT EXISTS `userfeedback` (
+  `Feed_Id` int(5) NOT NULL AUTO_INCREMENT,
+  `Feed_Name` varchar(50) NOT NULL,
+  `Feed_Mobile` varchar(30) NOT NULL,
+  `Feed_Message` varchar(300) NOT NULL,
+  `Feed_Date_Time` varchar(30) NOT NULL,
+  PRIMARY KEY (`Feed_Id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `userfeedback`
+--
+
+INSERT INTO `userfeedback` (`Feed_Id`, `Feed_Name`, `Feed_Mobile`, `Feed_Message`, `Feed_Date_Time`) VALUES
+(1, 'gopal singh', 'None', 'hi', '2019-04-20 11:38:50.591000');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
